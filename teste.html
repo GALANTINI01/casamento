@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Casamento</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #noButton {
+            left: 40%;
+            top: 50%;
+            position: static;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Quer casar comigo?</h2>
+        <button id="yesButton" onmouseover="moveButton()">Sim</button>
+        <button id="noButton" onclick="showMessage()">Não</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const button = document.getElementById("yesButton");
+            const container = document.querySelector(".container");
+            
+            const maxX = container.clientWidth - button.clientWidth;
+            const maxY = container.clientHeight - button.clientHeight;
+            
+            const newX = Math.random() * maxX;
+            const newY = Math.random() * maxY;
+            
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
+        }
+
+        function showMessage() {
+            document.body.innerHTML = `<div style='text-align: center; padding: 20px;'>
+                <h2>Lara, isso não foi gerado no ChatGPT.</h2>
+                <p>Meu amor,</p>
+                <p>Estou passando antes do dia para te desejar, com todo o meu coração, um feliz aniversário antecipado! 🥰🎉 Sei que ainda faltam algumas horas (ou dias), mas não quis esperar para lembrar... brincadeira rsrs</p>
+                <p>Falando sério agora,</p>
+                <p>Deixei para te dar hoje pois eu acompanho você diariamente e sei o quão você é esforçada e merece esse celular, e realmente não daria para esperar até o dia do seu aniversário para isso. Agora você pode ver os reels do Instagram, tirar foto da sua aventura na veterinária, e eu quero receber todas essas fotos, hein!</p>
+                <p>Você ilumina o meu mundo de um jeito único, e sou muito grato por ter você ao meu lado.</p>
+                <p>Com amor,</p>
+                <p>Gabriel.</p>
+            </div>`;
+        }
+    </script>
+</body>
+</html>
